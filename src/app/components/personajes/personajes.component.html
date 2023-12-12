@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        @for (character of characters; track $index) {
+        <div class="col-md-3" >
+            <div class="card">
+                <img src="{{ character.image }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ character.name }}</h5>
+                    <button class="btn btn-warning card-button">+ Info</button>
+                </div>
+            </div>
+        </div>}
+    </div>
+</div>

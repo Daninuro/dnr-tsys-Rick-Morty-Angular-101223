@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 90vh;
+}
+
+img {
+    width: 90vw;
+    height: 90vh;
+    filter: blur(5px);
+    object-fit: cover;
+    border-radius: 80%;
+}
+
+h1 {
+    font-size: 60px;
+    font-style: oblique;
+    font-family: fantasy;
+    text-align: center;
+    color: #ffffffa5;
+    background-color: rgba(127, 52, 219, 0.7); 
+    padding: 20px;
+    border-radius: 10px;
+    
+}
