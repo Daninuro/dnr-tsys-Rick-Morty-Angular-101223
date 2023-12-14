@@ -1,5 +1,7 @@
 # DnrTsysRickMortyAngular101223
 
+AWS --> https://main.d39v2piukuuw05.amplifyapp.com/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
 
 ## Development server
