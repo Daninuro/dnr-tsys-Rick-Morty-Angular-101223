@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ServiceService } from '../../services/service.service';
 
 @Component({
   selector: 'app-buscador',
@@ -13,24 +13,26 @@ export class BuscadorComponent {
 
   searchTerm: string = '';
   searchResults: any[] = [];
+  selectedCharacter: any;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(private route: ActivatedRoute,private ServiceService: ServiceService, private router: Router) {}
 
-  ngOnInit(): void {//Obtains the search term
+ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.searchTerm = params['term'];
       this.search();
     });
   }
 
-  search() {//Search name in the API and return results
-    const searchUrl = `https://rickandmortyapi.com/api/character/?name=${this.searchTerm}`;
-    this.http.get(searchUrl).subscribe((data: any) => {
+  search() {
+    this.ServiceService.searchCharactersByName(this.searchTerm).subscribe((data: any) => {
       this.searchResults = data.results;
     });
   }
-  showCharacterInfo(character: any) {
-    alert(`Name: ${character.name}\nStatus: ${character.status}\nSpecies: ${character.species}\nType: ${character.type}\nGender: ${character.gender}`);
+
+  showCharacter(character: any) {
+    const characterId = character.id;
+    this.router.navigate(['/character', characterId]);
   }
 
 }

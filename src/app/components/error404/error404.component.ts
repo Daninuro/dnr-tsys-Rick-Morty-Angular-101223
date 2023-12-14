@@ -3,12 +3,12 @@ import { RouterLink } from '@angular/router';
 
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-error404',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  templateUrl: './error404.component.html',
+  styleUrl: './error404.component.css'
 })
-export class HomeComponent {
+export class Error404Component {
 
 }

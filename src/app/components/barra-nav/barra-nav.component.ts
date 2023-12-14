@@ -15,9 +15,7 @@ export class BarraNavComponent {
 
   constructor(private router: Router) {}
 
-  search() {
+  buscar() {
       this.router.navigate(['/buscador/', this.name.nativeElement.value]);
   }
-
-
 }

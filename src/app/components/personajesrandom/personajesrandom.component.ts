@@ -1,5 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ServiceService } from '../../services/service.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-personajesrandom',
@@ -8,36 +10,23 @@ import { Component } from '@angular/core';
   templateUrl: './personajesrandom.component.html',
   styleUrl: './personajesrandom.component.css'
 })
-export class PersonajesrandomComponent {
+export class PersonajesrandomComponent implements OnInit {
 
   characters: any[] = [];
   count:number = 0;
-  randomCharacterIds: number[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private ServiceService: ServiceService, private router: Router) {}
 
   ngOnInit(): void {
-    this.generateRandomIds();
-    this.loadRandomCharacters();
-  }
-
-  generateRandomIds() {
-    while (this.randomCharacterIds.length < 12) {
-      const randomId = Math.floor(Math.random() * 826) + 1;
-      if (!this.randomCharacterIds.includes(randomId)) {
-        this.randomCharacterIds.push(randomId);
-      }
-    }
-  }
-
-  loadRandomCharacters() {//Load random characters
-    const url = `https://rickandmortyapi.com/api/character/${this.randomCharacterIds.join(',')}`;
-    this.http.get(url).subscribe((data: any) => {
-      this.characters = data.slice(0, 8);;
+    const randomIds = this.ServiceService.generateRandomIds(8);
+    this.ServiceService.loadRandomCharacters(randomIds).subscribe((data: any) => {
+      this.characters = data;
     });
   }
-  showCharacterInfo(character: any) {
-    alert(`Name: ${character.name}\nStatus: ${character.status}\nSpecies: ${character.species}\nType: ${character.type}\nGender: ${character.gender}`);
+
+  showCharacter(character: any) {
+    const characterId = character.id;
+    this.router.navigate(['/character', characterId]);
   }
 
 }

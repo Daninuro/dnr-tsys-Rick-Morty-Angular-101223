@@ -1,0 +1,67 @@
+{
+  "characters": [
+    {
+      "id": 1,
+      "name": "Rick Sanchez",
+      "status": "Alive",
+      "species": "Human",
+      "gender": "Male",
+      "origin": "Earth",
+      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Morty Smith",
+      "status": "Alive",
+      "species": "Human",
+      "gender": "Male",
+      "origin": "Citadel of Ricks",
+      "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Summer Smith",
+      "status": "Alive",
+      "species": "Human",
+      "gender": "Female",
+      "origin": "Earth (Replacement Dimension)",
+      "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg"
+    },
+    {
+      "id": 4,
+      "name": "Beth Smith",
+      "status": "Alive",
+      "species": "Human",
+      "gender": "Female",
+      "origin": "Earth (Replacement Dimension)",
+      "image": "https://rickandmortyapi.com/api/character/avatar/4.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "Jerry Smith",
+      "status": "Alive",
+      "species": "Human",
+      "gender": "Male",
+      "origin": "Earth (Replacement Dimension)",
+      "image": "https://rickandmortyapi.com/api/character/avatar/5.jpeg"
+    },
+    {
+      "name": "Monkey D Luffy",
+      "status": "Alive ",
+      "species": "Monkey",
+      "gender": "Male",
+      "origin": "Unknown",
+      "image": "https://i.pinimg.com/originals/b8/f6/e5/b8f6e52db9e51a9bcad0a4905f38aecf.jpg",
+      "id": 7
+    },
+    {
+      "name": "Shanks Es PAPA",
+      "status": "GOD",
+      "species": "Inhuman",
+      "gender": "Male",
+      "origin": "Unknown",
+      "image": "https://i.pinimg.com/1200x/73/41/cd/7341cd651d22996201b9da1efda6aa5b.jpg",
+      "id": 8
+    }
+  ]
+}

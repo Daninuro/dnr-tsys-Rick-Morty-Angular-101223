@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BarraNavComponent } from './barra-nav.component';
 
-describe('BarraNavComponent', () => {
-  let component: BarraNavComponent;
-  let fixture: ComponentFixture<BarraNavComponent>;
+import { Error404Component } from './error404.component';
+
+describe('Error404Component', () => {
+  let component: Error404Component;
+  let fixture: ComponentFixture<Error404Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BarraNavComponent]
+      imports: [Error404Component]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(BarraNavComponent);
+    fixture = TestBed.createComponent(Error404Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,5 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { ServiceService } from '../../services/service.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-personajes',
@@ -12,19 +14,21 @@ export class PersonajesComponent {
 
   characters: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private ServiceService: ServiceService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadCharacters();
   }
 
   loadCharacters() {
-    this.http.get('https://rickandmortyapi.com/api/character').subscribe((data: any) => {
+    this.ServiceService.getCharacters().subscribe((data: any) => {
       this.characters = data.results.slice(0, 8);
     });
   }
-  showCharacterInfo(character: any) {
-    alert(`Name: ${character.name}\nStatus: ${character.status}\nSpecies: ${character.species}\nType: ${character.type}\nGender: ${character.gender}`);
+
+  showCharacter(character: any) {
+    const characterId = character.id;
+    this.router.navigate(['/character', characterId]);
   }
 
 }

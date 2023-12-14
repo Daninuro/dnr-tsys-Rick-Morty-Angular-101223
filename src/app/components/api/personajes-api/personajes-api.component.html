@@ -1,0 +1,25 @@
+<header>
+    <h1>Rick and Morty API Characters</h1>
+</header>
+
+<div class="container mt-3">
+    <div>
+        <button routerLink="/formulario" class="btn btn-secondary mt-3">Add new Character</button>
+    </div>
+    <br>
+    <div class="row">
+        @for (character of characters; track $index) {
+        <div class="col-md-3" >
+            <div class="card">
+                <img src="{{ character.image }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ character.name }}</h5>
+                    <button (click)="showCharacter(character)" class="btn btn-warning card-button">+ INFO</button>
+                </div>
+            </div>
+        </div>}
+    </div>
+</div>
+<footer>
+    &copy; 2023 Ricky & Morty App. All rights reserved.
+</footer>

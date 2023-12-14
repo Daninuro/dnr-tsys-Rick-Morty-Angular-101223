@@ -1,0 +1,35 @@
+<header>
+    <h1>Rick and Morty API Characters</h1>
+</header>
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="text-center mb-4">{{ character.name }}</h2>
+            <button class="btn btn-secondary mt-3 btn-separator" (click)="editCharacter()">Edit</button>
+            <button class="btn btn-secondary mt-3" (click)="deleteCharacter()">Delete</button>
+            <div *ngIf="message" class="alert alert-success mt-3">
+                {{ message }}
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <img [src]="character.image" alt="{{ character.name }} Image" class="img-fluid">
+                </div>
+                <div class="col-md-8">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Status:</strong> {{ character.status }}</li>
+                        <li class="list-group-item"><strong>Species:</strong> {{ character.species }}</li>
+                        <li class="list-group-item"><strong>Gender:</strong> {{ character.gender }}</li>
+                        <li class="list-group-item"><strong>Orign:</strong> {{ character.origin }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2023 Ricky & Morty App. All rights reserved.
+</footer>

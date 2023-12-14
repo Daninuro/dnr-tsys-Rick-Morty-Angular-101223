@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BarraNavComponent } from './barra-nav.component';
 
-describe('BarraNavComponent', () => {
-  let component: BarraNavComponent;
-  let fixture: ComponentFixture<BarraNavComponent>;
+import { PersonajeApiComponent } from './personaje-api.component';
+
+describe('PersonajeApiComponent', () => {
+  let component: PersonajeApiComponent;
+  let fixture: ComponentFixture<PersonajeApiComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BarraNavComponent]
+      imports: [PersonajeApiComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(BarraNavComponent);
+    fixture = TestBed.createComponent(PersonajeApiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
